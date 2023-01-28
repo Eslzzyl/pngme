@@ -52,7 +52,7 @@ The program will print all chunks' type and length of the given PNG file.
 
 # Example
 
-Suppose I have an test.png at `./images/`.
+Suppose I have a test.png at `./images/`.
 
 ```Shell
 cargo run -- encode ./images/test.png "rust" "This is a secret message!" ./images/out.png
