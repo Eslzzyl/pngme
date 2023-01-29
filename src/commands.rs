@@ -34,7 +34,7 @@ pub fn remove(params: &RemoveCommand) {
     let mut png = read_png(&params.image_path);
     let chunk_type = &params.chunk_type;
     png.remove_chunk(&chunk_type).expect("Chunk not found!");
-    println!("Successfully removed chunk with pattern {} in file {}.",
+    println!("Successfully removed chunk with pattern \"{}\" in file {}.",
         chunk_type.to_string(), &params.image_path.to_str().unwrap());
 }
 
@@ -58,9 +58,6 @@ fn read_png(path: &PathBuf) -> Png {
 
 fn write_png(path: &PathBuf, png: &Png) {
     // fs::write(path, png.to_string()).expect("Couldn't write PNG file.");
-    let mut png_file = match File::open(path) {
-        Ok(png_file) => png_file,
-        Err(_) => File::create(path).expect("Error when creating file.")
-    };
+    let mut png_file = File::create(path).expect("Error when creating file.");
     png_file.write_all(&png.as_bytes()).expect("Error when reading PNG file.");
 }
