@@ -6,7 +6,7 @@ This is an interesting project, and I might add some more features to it soon.
 
 # External dependencies
 
-[crc](https://crates.io/crates/crc) (3.0.0) and [clap](https://github.com/clap-rs/clap) (4.0.0)
+[crc](https://crates.io/crates/crc) (3.0.0) and [clap](https://github.com/clap-rs/clap) (4.1.4)
 
 # Usage
 
